@@ -83,7 +83,7 @@ class MusicLibraryController
     input = gets
     if input.to_i
       song_number = input.to_i - 1
-      if alphabetize_songs[song_number] && alphabetize_songs[song_number] > 0
+      if alphabetize_songs[song_number] && song_number > 0
         puts "Playing #{alphabetize_songs[song_number].name} by #{alphabetize_songs[song_number].artist.name}"
       end
     end
