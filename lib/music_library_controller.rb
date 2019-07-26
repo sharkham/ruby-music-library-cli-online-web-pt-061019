@@ -83,7 +83,7 @@ class MusicLibraryController
     input = gets
     if input.to_i
       song_number = input.to_i
-      puts "Playing #{list_songs[song_number].name} by #{list_songs[song_number].artist.name}"
+      puts "Playing #{alphabetize_songs[song_number].name} by #{alphabetize_songs[song_number].artist.name}"
     end
 
   end
