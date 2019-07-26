@@ -28,10 +28,14 @@ class MusicLibraryController
     end
   end
 
+  def alphabetize_songs 
+    sorted_songs = Song.all.sort_by {|s| s.name}
+  end 
 
   def list_songs
-    sorted_songs = Song.all.sort_by {|s| s.name}
-    sorted_songs.each_with_index do |song, i|
+    # sorted_songs = Song.all.sort_by {|s| s.name}
+    # sorted_songs.each_with_index do |song, i|
+    alphabetize_songs.each_with_index do |song, i|
       puts "#{i + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
   end
@@ -81,10 +85,10 @@ class MusicLibraryController
       song_number = input.to_i
       puts "Playing #{self.list_songs[song_number].name} by #{self.list_songs[song_number].artist.name}"
     end
-    # if song = self.list_songs[song_number]
-    #   song = self.list_songs[song_number]
-    #   puts "Playing #{song.name} by #{song.artist.name}"
-    # end
-  end
 
+  end
+  # if song = self.list_songs[song_number]
+  #   song = self.list_songs[song_number]
+  #   puts "Playing #{song.name} by #{song.artist.name}"
+  # end
 end
