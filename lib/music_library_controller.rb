@@ -28,9 +28,9 @@ class MusicLibraryController
     end
   end
 
-  def alphabetize_songs 
+  def alphabetize_songs
     sorted_songs = Song.all.sort_by {|s| s.name}
-  end 
+  end
 
   def list_songs
     # sorted_songs = Song.all.sort_by {|s| s.name}
